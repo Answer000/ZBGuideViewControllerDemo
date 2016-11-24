@@ -8,7 +8,11 @@
 
 
 ### 导入方法
-* 手动导入(暂不支持cocoapods):将ZBGuideViewController文件夹拖入项目中即可
+* 手动导入:将ZBGuideViewController文件夹拖入项目中即可
+* pods导入:
+ ```
+ pod 'ZBGuideViewController', '~> 0.0.2'
+ ```
 
 ### 使用方法
 *   只需在AppDelegate.m文件中将主窗口的根控制器设置为ZBGuideViewController即可：
