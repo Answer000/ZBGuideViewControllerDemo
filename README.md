@@ -11,15 +11,15 @@
 * 手动导入:将ZBGuideViewController文件夹拖入项目中即可
 * pods导入:
  ```
- pod 'ZBGuideViewController', '~> 0.0.2'
+ pod 'ZBGuideViewController', '~> 0.0.3'
  ```
 
 ### 使用方法
 *   只需在AppDelegate.m文件中将主窗口的根控制器设置为ZBGuideViewController即可：
 ```Objc 
-    //mainRootViewController: 主窗口根控制
-    //guideImageNames: 引导页图片数组
-    //advertisingImageUrlStr: 广告页图片链接地址
+    // mainRootViewController 	: 主窗口根控制
+    // guideImageNames 		: 引导页图片数组
+    // advertisingImageUrlStr 	: 广告页图片链接地址
     ZBGuideViewController *guideVC = [[ZBGuideViewController alloc] initWithMainRootViewController:tabbarVC guideImageNames:images advertisingImageUrlStr:urlStr[arc4random() % urlStr.count]];
     
     // 倒计时时间
@@ -66,11 +66,15 @@
 
 * 自定义广告详情控制器
 ```Objc
-    UIViewController *detailVC = [UIViewController new];
-    detailVC.title = @"广告详情";
-    detailVC.view.backgroundColor = [UIColor redColor];
-    detailVC.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:guideVC action:@selector(cancelClick)];
-    guideVC.detailVC = detailVC;
+   UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:({
+   	UIViewController *detailVC = [[UIViewController alloc] init];
+   	detailVC.title = @"广告详情";
+   	detailVC.view.backgroundColor = [UIColor redColor];
+   	detailVC.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(cancelClick)];
+   	_detailVC = detailVC;
+   	detailVC;
+   })];
+   guideVC.detailVC = navi;
 ```
 
 ### 
