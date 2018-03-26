@@ -4,11 +4,15 @@
 * 实现了引导页和广告页功能，只需将keyWindow的根控制器设置为ZBGuideViewController便可轻松实现引导及广告功能，且自定义程度高
 
 * 如图所示
-
+![image](https://github.com/AnswerXu/ZBGuideViewControllerDemo/blob/master/ReadImages/guide.gif)
 
 
 ### 导入方法
-* 手动导入(暂不支持cocoapods):将ZBGuideViewController文件夹拖入项目中即可
+* 手动导入:将ZBGuideViewController文件夹拖入项目中即可
+* pods导入:
+ ```
+ pod 'ZBGuideViewController', '~> 0.0.2'
+ ```
 
 ### 使用方法
 *   只需在AppDelegate.m文件中将主窗口的根控制器设置为ZBGuideViewController即可：
@@ -65,4 +69,5 @@
 
 ### 
 
-	谢谢支持，可能还有很多不完善的地方，期待您的建议！如果有帮到您，请不吝follow。邮箱：zhengbo073017@163.com
+	   谢谢支持，可能还有很多不完善的地方，期待您的建议！如对您有帮助，请不吝您的Star，您的支持与鼓励是我继续前行的动力。
+	   邮箱：zhengbo073017@163.com
