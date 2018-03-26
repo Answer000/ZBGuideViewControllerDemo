@@ -13,14 +13,32 @@
 
 
 @interface ZBGuideViewController : UIViewController
-//广告详情控制器
+
+//****** 倒计时时间(默认3S) ******//
+@property (nonatomic,assign) NSInteger countDownNum;
+
+//****** 进入广告详情后是否切换窗口根控制器(默认YES) ******//
+@property (nonatomic,assign) BOOL changeRootWhenEnterAdvertisingDetails;
+
+//****** 广告详情控制器(不跳转可不传) ******//
 @property (nonatomic,strong) UIViewController *detailVC;
-//自定义广告图customView的block
+
+//****** 自定义广告图customView的block ******//
 - (void)reSetAdverCustomView:(void(^)(UIView *customView))customViewBlock;
-//自定义引导页JoinNow按钮的block
+
+//****** 自定义引导页JoinNow按钮的block ******//
 - (void)reSetGPJumpBtnBlock:(void(^)(UIButton *jumpBtn))jumpBtnBlock;
--(instancetype)initWithMainRootViewController:(UIViewController *)mainRootVC guideImages:(NSArray<NSString*> *)images adverUrlStr:(NSString *)urlStr;
--(void)cancelClick;
+
+
+
+/*
+     mainRootViewController : 主根控制器
+     guideImageNames        : 引导页(APP第一次启动时加载本地图片)
+     advertisingImageUrlStr : 广告图(APP非第一次启动时加载网络图片)
+ */
+-(instancetype)initWithMainRootViewController:(UIViewController *)mainRootViewController
+                              guideImageNames:(NSArray<NSString*> *)imageNames
+                       advertisingImageUrlStr:(NSString *)urlStr;
 
 @end
 

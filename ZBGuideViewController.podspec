@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name         = 'ZBGuideViewController'
-    s.version      = '0.0.1'
+    s.version      = '0.0.3'
     s.summary      = '实现引导页和广告图功能，可定制性高'
     s.homepage     = 'https://github.com/AnswerXu/ZBGuideViewControllerDemo.git'
     s.license      = { :type => "MIT", :file => "LICENSE" }
