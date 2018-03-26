@@ -17,10 +17,16 @@
 ### 使用方法
 *   只需在AppDelegate.m文件中将主窗口的根控制器设置为ZBGuideViewController即可：
 ```Objc 
-    //mainRootViewController: 原来的主窗口根控制
-    //guideImages: 引导页图片数组
-    //adverUrlStr: 广告页图片链接
-    ZBGuideViewController *guideVC = [[ZBGuideViewController alloc] initWithMainRootViewController:tabbarVC guideImages:images adverUrlStr:urlStr[arc4random() % urlStr.count]];
+    //mainRootViewController: 主窗口根控制
+    //guideImageNames: 引导页图片数组
+    //advertisingImageUrlStr: 广告页图片链接地址
+    ZBGuideViewController *guideVC = [[ZBGuideViewController alloc] initWithMainRootViewController:tabbarVC guideImageNames:images advertisingImageUrlStr:urlStr[arc4random() % urlStr.count]];
+    
+    // 倒计时时间
+    guideVC.countDownNum = 10;
+    
+    // 进入广告详情后是否切换根控制器
+    guideVC.changeRootWhenEnterAdvertisingDetails = NO;
 
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = guideVC;
